@@ -1,7 +1,7 @@
 This repository provides R code for **gridwise bias correction** of climate models using the qmap package. The aim of the code is to correct biases in model values using observed values of the same time period. 
 Additionally, the code applies the same bias correction to future values, assuming same biases persist. 
 
-Follow 
+Please explore the 'Data Preprocessing' folder for basic tools that may be beneficial for beginners.
 
 Article Reference: Under Review
 
