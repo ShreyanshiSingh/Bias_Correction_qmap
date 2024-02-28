@@ -43,7 +43,7 @@ brk<-mask(brk,shp) # Mask the raster using the shapefile
 # Uncomment the following lines if you want to project to another NetCDF file
 # -------------------------------------------------------------
 # Project the raster to the reference NetCDF file
-brk<-projectRaster(brk,nc_file)
+# brk<-projectRaster(brk,nc_file)
 # -------------------------------------------------------------
 
 brk<-readAll(brk)  # Read all layers in the raster brick
