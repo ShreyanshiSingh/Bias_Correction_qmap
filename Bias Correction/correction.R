@@ -1,4 +1,6 @@
 # This script performs monthly quantile mapping on gridded climate data, correcting current and future model values.
+# Downloaded files are in .nc (NetCDF) format, a common format for climate data.
+# The data undergoes preprocessing and is stored in brick format.
 # The correction is done for each grid point to ensure proper adjustment, and results are saved for each month.
 # The code utilizes the raster and qmap libraries in R.
 
