@@ -6,7 +6,7 @@
 ##########################################################################################################################################3
 
 
-# Load the 'raster' library for raster data manipulation
+# Load the 'raster' library 
 library(raster)
 
 # Set the working directory to the folder containing raster files
