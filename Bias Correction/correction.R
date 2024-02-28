@@ -1,8 +1,8 @@
 # This script performs monthly quantile mapping on gridded climate data, correcting current and future model values.
 # Downloaded files are in .nc (NetCDF) format, a common format for climate data.
-# The data undergoes preprocessing and is stored in brick format.
+# The data undergoes preprocessing based on users' needs and is stored in brick format.
 # The correction is done for each grid point to ensure proper adjustment, and results are saved for each month.
-# The code utilizes the raster and qmap libraries in R.
+# Monthly corrections were made to ensure proper adjustment using quantile mapping.
 
 
 
@@ -27,9 +27,9 @@ n_ft<-c(...)
 # Iterate through each month
 for(i in 1:12){
 # Load observed, model, and future model data for the current month
-obs<-brick(paste0("/path/to/folder/",months[i],".grd"))
-mod<-brick(paste0("/path/to/folder/",months[i],".grd"))
-f_mod<-load(paste0("/path/to/folder/",months[i],".grd"))
+obs<-brick(paste0("/path/to/file/",months[i],".grd"))
+mod<-brick(paste0("/path/to/file/",months[i],".grd"))
+f_mod<-load(paste0("/path/to/file/",months[i],".grd"))
 
 # Define dimensions for corrected and future_corrected arrays
 # Adjust the values of nrow and ncol based on your specific requirements.
@@ -51,11 +51,11 @@ for(x in 1:nrow_val){
     qm4.fit <- fitQmap(observed,model,
                        method="QUANT",qstep=0.01,na.rm=T)
                        
-    qm4 <- doQmap(model,qm4.fit,type="linear",na.rm=T)
+    qmp <- doQmap(model,qm4.fit,type="linear",na.rm=T)
     qmf<-doQmap(f_model,qm4.fit,type="linear",na.rm=T)
 
     # Store the results in corrected and future_corrected arrays
-    corrected_array[x,y,]<-qm4
+    corrected_array[x,y,]<-qmp
     future_corrected_array[x,y,]<-qmf
   }
 }
@@ -88,6 +88,7 @@ save(future_corrected_array,file=paste0("/path/to/folder/",months[i],".RData"))
 # }
 # brick_obj <- brick(raster_list)
 # Bcorr_brick<-readAll(brick_obj)
+# Save the 3D array
 # save(Bcorr_brick,file=paste0("/path/to/folder/",months[i],".grd"))
 
 # Follow a similar process for the future_corrected arrays.
