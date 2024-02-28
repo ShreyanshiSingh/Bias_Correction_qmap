@@ -1,5 +1,5 @@
-This repository provides R code for **gridwise bias correction** of climate models using the qmap package. The aim of the code is to correct biases in model values using reanalysis values of the same time period. 
-Additionally, the code applies the same bias correction to future values, assuming same biases persist.
+This repository provides R code for **gridwise bias correction** of climate models using the qmap package. The aim of the code is to correct biases in model values using observed values of the same time period. 
+Additionally, the code applies the same bias correction to future values, assuming same biases persist. 
 
 Article Reference: Under Review
 
@@ -11,8 +11,8 @@ Detailed information on qmap package and its methodology can be found [here](htt
 
 ## Workflow Overview
 ### Inputs:
-1. *CNRM-CMIP6* (historic and future)
-2. *ERA5 Reanalysis*
+1. *Model values* (historic and future)
+2. *observed values*
 
 It's crucial to ensure that both inputs share the same grid/resolution and cover identical time periods to facilitate accurate bias correction.
 
