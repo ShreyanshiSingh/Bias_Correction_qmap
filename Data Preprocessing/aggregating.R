@@ -1,6 +1,6 @@
 
 # This R script processes hourly data in NetCDF format for a specified spatial extent.
-# It converts the hourly precipitation values to daily totals, crops the data to the extent of a specified shapefile,
+# It converts the hourly values to daily totals, crops the data to the extent of a specified shapefile,
 # and saves the processed raster layers as new files.
 # Users can customize the aggregation function and other parameters as needed.
 
@@ -13,7 +13,7 @@ library(sf)       # For handling spatial data (shapefiles)
 # Specify the path to the shapefile representing the desired spatial extent if needed.
 shp <- shapefile("/path/to/file/file.shp")
 
-# Set the working directory to the folder containing the hourly NetCDF files
+# Set the working directory to the folder containing the NetCDF files
 setwd("/path/to/files/")
 files <- list.files(pattern = "*.nc")
 
